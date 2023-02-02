@@ -2,6 +2,18 @@
 #include <stdio.h>
 #include <string.h>
 
+void no_null()
+{
+    char name[50];
+    name[0] = 'A';
+    name[1] = 'm';
+    name[2] = 'a';
+    name[3] = 'n';
+    name[4] = 'd';
+    name[5] = 'a';
+    printf("My name has %ld characters\n", strlen(name));
+}
+
 void no_malloc()
 {
     int* mem;
@@ -70,6 +82,8 @@ int main(int argc, char* argv[])
             int n = atoi(argv[2]);
             access_unallocated(n);
             break;
+	case 5:
+	    no_null();
         default:
             break;
     }
