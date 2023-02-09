@@ -17,8 +17,10 @@ int main(int argc, char* argv[])
         int rc2 = fork();
         if (rc2 == 0)
             printf("Grandchild here (pid %d)\n", (int) getpid());
+            _exit(0);
         else
             printf("Hello, I am child (pid: %d)\n", (int) getpid());
+            _exit(0);
     }
     else
     {
